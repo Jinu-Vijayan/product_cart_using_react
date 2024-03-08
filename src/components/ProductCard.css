@@ -39,3 +39,9 @@ img{
     color: #0000ff;
     cursor: pointer;
 }
+
+@media screen and (max-width:547.5px) {
+    .card-container{
+        width: 80%;
+    }
+}
