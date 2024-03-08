@@ -1,0 +1,37 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    color: #ffffff;
+    background-color: #0000ff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.icon-and-count{
+    /* display: flex; */
+    padding:0 1rem ;
+    /* align-items: center; */
+    position: relative;
+}
+
+.navbar-icon{
+    font-size: 2rem;
+}
+
+.item-count{
+    position: absolute;
+    top: -15px;
+    right: 2px;
+    font-size: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #31318f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+}
