@@ -7,17 +7,9 @@ function ProductCard({img, name, price, count, setProductCount, setTotalCost, ph
 
     const [quantity, setQuantity] = useState(count);
 
+    // console.log("render")
+
     useEffect(()=>{
-
-        setPhoneData((previousState)=>{
-            const data = previousState[id];
-            data.quantity = quantity;
-            previousState.splice(id,1,data);
-
-            // console.log(previousState);
-
-            return previousState;
-        })
 
         if(count === 0){
 
@@ -32,7 +24,7 @@ function ProductCard({img, name, price, count, setProductCount, setTotalCost, ph
         const updatedArray = phoneData.map((elem,index)=>{
             if(index === id){
                 elem.quantity += 1;
-                setQuantity(quantity+ 1);
+                setQuantity((previousState) => previousState + 1);
                 setProductCount((previousValue)=> previousValue + 1);
                 setTotalCost((previousValue)=> Math.round(previousValue + price))
             }
@@ -45,11 +37,8 @@ function ProductCard({img, name, price, count, setProductCount, setTotalCost, ph
 
     function decrementHandler(){
 
-        console.log("decrementing")
-
         if(count > 0){
 
-            console.log("inside if in decrement")
 
             const updatedArray = phoneData.map((elem,index)=>{
                 if(index === id){
@@ -65,11 +54,15 @@ function ProductCard({img, name, price, count, setProductCount, setTotalCost, ph
     
             setPhoneData(updatedArray)
 
-        }
+        } 
+        
+        
 
     }
 
     function removeHandler(id){
+
+        // setQuantity(0);
 
         setPhoneData((previousState)=>{
             const data = [...previousState];
